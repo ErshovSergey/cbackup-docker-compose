@@ -32,3 +32,6 @@ docker exec -i -t cb.erchov.ru_cbackup /opt/init.sh
 ```
 Настройки производить в соответствии с  
 ![Settings glpi-mysql](./doc/cbackup_settings.png)  
+
+#### Настройка Device auth templates для RouterOS (mikrotik)
+![Device auth templates ](./doc/Device_auth_templates.JPG)  
