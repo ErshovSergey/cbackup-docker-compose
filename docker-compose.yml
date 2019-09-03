@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+  cbackup:
+    environment:
+      - CBACKUP_PASSWORD=${CBACKUP_PASSWORD}
+#      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    build:
+      context: cbackup
+      dockerfile: Dockerfile
+    hostname: cbackup
+    volumes:
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+      - "${CBACKUP_PATH}/cbackup:/opt/cbackup"
+      - "${CBACKUP_PATH}/logs/apache2:/var/log/apache2"
+      - "${CBACKUP_PATH}/mysql_data:/var/lib/mysql"
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+
+    container_name: "${CBACKUP_NAME}_cbackup"
+    ports:
+      -  "${CBACKUP_HTTP_IP_PORT}:80"
+    restart: always
+#    logging:
+#      driver: none
+
+    cap_drop:
+     - SYS_ADMIN
