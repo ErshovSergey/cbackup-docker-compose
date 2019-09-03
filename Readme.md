@@ -30,8 +30,11 @@ docker-compose down -v --rmi all --remove-orphans
 ```
 docker exec -i -t cb.erchov.ru_cbackup /opt/init.sh
 ```
-Настройки производить в соответствии с  
-![Settings glpi-mysql](./doc/cbackup_settings.png)  
+#### Настройки производить в соответствии с ранее установленными настройками в *.env*  
+<img src='./doc/cbackup_settings.png' width='900'>  
 
-#### Настройка Device auth templates для RouterOS (mikrotik)
-![Device auth templates ](./doc/Device_auth_templates.JPG)  
+
+
+#### Настройка Device auth templates для RouterOS (mikrotik)  
+<img src='./doc/Device_auth_templates.JPG' width='600'>  
+
